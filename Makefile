@@ -6,7 +6,7 @@
 #    By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/21 13:26:38 by mrosie            #+#    #+#              #
-#    Updated: 2020/11/24 15:10:32 by mrosie           ###   ########.fr        #
+#    Updated: 2020/11/24 18:48:42 by mrosie           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,10 @@ SRCS	= ft_printf.c \
 			ft_parser.c \
 			ft_print_char.c \
 			ft_print_string.c \
-			ft_print_decimal.c \
+			ft_print_number.c \
 			ft_print_pointer.c \
 			ft_itoa_base.c \
+			ft_ulitoa_base.c \
 			ft_uitoa_base.c
 
 HEAD	= ft_printf.h

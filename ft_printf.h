@@ -6,7 +6,7 @@
 /*   By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 15:45:18 by mrosie            #+#    #+#             */
-/*   Updated: 2020/11/24 16:02:57 by mrosie           ###   ########.fr       */
+/*   Updated: 2020/11/24 18:45:21 by mrosie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef	struct	s_parse
 	int			width;
 	int			precision;
 	int			offset;
-	int			printed_bytes;
 }				t_spec;
 
 int				ft_printf(const char *format, ...);
@@ -37,6 +36,7 @@ int				ft_print_pointer(t_spec sp, unsigned long toptr);
 int				ft_print_string(t_spec sp, char *string);
 int				ft_putbyte(int *mod, int *printed_bytes, char sym);
 char			*ft_itoa_base(long n, int base, uint8_t uppercase);
-char			*ft_uitoa_base(unsigned long n, int base);
+char			*ft_uitoa_base(unsigned int n, int base, uint8_t uppercase);
+char			*ft_ulitoa_base(unsigned long n, int base, uint8_t uppercase);
 
 #endif

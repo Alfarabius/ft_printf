@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_decimal.c                                 :+:      :+:    :+:   */
+/*   ft_print_number.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 14:10:54 by mrosie            #+#    #+#             */
-/*   Updated: 2020/11/23 16:59:48 by mrosie           ###   ########.fr       */
+/*   Updated: 2020/11/24 18:37:23 by mrosie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ int	ft_print_number(t_spec sp, long number, int base, uint8_t uppercase)
 	int		size;
 
 	printed_bytes = 0;
-	if (!(str = ft_itoa_base(number, base, uppercase)))
+	if (!(str = (base == 16) ? ft_uitoa_base(number, base, uppercase) :
+		ft_itoa_base(number, base, uppercase)))
 		return (-1);
 	size = ft_strlen(str);
 	if (sp.precision == 0 && *str == '0')

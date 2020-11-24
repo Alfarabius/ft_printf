@@ -6,7 +6,7 @@
 /*   By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 15:35:17 by mrosie            #+#    #+#             */
-/*   Updated: 2020/11/24 16:03:29 by mrosie           ###   ########.fr       */
+/*   Updated: 2020/11/24 18:12:36 by mrosie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static	void	ft_struct_init(t_spec *spec)
 	spec->width = 0;
 	spec->precision = -1;
 	spec->offset = 0;
-	spec->printed_bytes = 0;
 }
 
 static	int		ft_putbyte_l(char sym, int step, const char **str)
@@ -41,10 +40,9 @@ static	int		ft_parse_format(const char *str, va_list ar)
 		if (*str == '%' && *(str + 1) != '%')
 		{
 			ft_struct_init(&spec);
-			if (ft_parser(++str, &spec, ar) == -1)
+			if ((printed_bytes += ft_parser(++str, &spec, ar)) == -1)
 				return (-1);
 			str += spec.offset + 1;
-			printed_bytes += spec.printed_bytes;
 		}
 		else if (*str && *(str + 1) == '%')
 			printed_bytes += ft_putbyte_l(*str, 2, &str);

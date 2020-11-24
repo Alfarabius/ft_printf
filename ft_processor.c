@@ -6,7 +6,7 @@
 /*   By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 12:38:50 by mrosie            #+#    #+#             */
-/*   Updated: 2020/11/24 15:59:25 by mrosie           ###   ########.fr       */
+/*   Updated: 2020/11/24 19:03:24 by mrosie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	ft_processor(char type, t_spec *sp, va_list ar)
 	else if (type == 'd' || type == 'i')
 		return (ft_print_number(*sp, va_arg(ar, int), 10, 0));
 	else if (type == 'u')
-		return (ft_print_number(*sp, va_arg(ar, long), 10, 0));
+		return (ft_print_number(*sp, va_arg(ar, unsigned int), 10, 0));
 	else if (type == 'x')
-		return (ft_print_number(*sp, va_arg(ar, long), 16, 0));
+		return (ft_print_number(*sp, va_arg(ar, unsigned long), 16, 0));
 	else if (type == 'X')
-		return (ft_print_number(*sp, va_arg(ar, long), 16, 1));
+		return (ft_print_number(*sp, va_arg(ar, unsigned long), 16, 1));
 	else if (type == 'o')
 		return (ft_print_number(*sp, va_arg(ar, unsigned long), 8, 0));
 	else if (type == '%')

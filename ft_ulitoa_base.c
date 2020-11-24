@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa_base.c                                    :+:      :+:    :+:   */
+/*   ft_ulitoa_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 14:15:46 by mrosie            #+#    #+#             */
-/*   Updated: 2020/11/24 18:47:15 by mrosie           ###   ########.fr       */
+/*   Created: 2020/11/24 18:43:15 by mrosie            #+#    #+#             */
+/*   Updated: 2020/11/24 18:43:19 by mrosie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	int	ft_symamount_base(unsigned int n, int base)
+static	int	ft_symamount_base(unsigned long n, int base)
 {
 	int amount;
 
@@ -29,12 +29,12 @@ static	int	ft_symamount_base(unsigned int n, int base)
 	return (amount);
 }
 
-char		*ft_uitoa_base(unsigned int n, int base, uint8_t uppercase)
+char		*ft_ulitoa_base(unsigned long n, int base, uint8_t uppercase)
 {
 	char				*str;
 	int					start;
 	int					end;
-	unsigned	int		tmp;
+	unsigned	long	tmp;
 
 	start = 0;
 	end = ft_symamount_base(n, base);

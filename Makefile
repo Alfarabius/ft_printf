@@ -6,7 +6,7 @@
 #    By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/21 13:26:38 by mrosie            #+#    #+#              #
-#    Updated: 2020/11/24 18:48:42 by mrosie           ###   ########.fr        #
+#    Updated: 2020/11/25 16:09:44 by mrosie           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,7 @@ SRCS	= ft_printf.c \
 			ft_print_pointer.c \
 			ft_itoa_base.c \
 			ft_ulitoa_base.c \
-			ft_uitoa_base.c
-
+			
 HEAD	= ft_printf.h
 
 OBJS	= $(SRCS:.c=.o)

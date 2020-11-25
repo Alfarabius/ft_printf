@@ -6,7 +6,7 @@
 /*   By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 14:10:54 by mrosie            #+#    #+#             */
-/*   Updated: 2020/11/24 18:37:23 by mrosie           ###   ########.fr       */
+/*   Updated: 2020/11/25 13:55:37 by mrosie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int	ft_print_right_size(char *str, t_spec sp, int size)
 		ft_putbyte(&(sp.width), &printed_bytes, ' ');
 	if (*str == '-')
 		str += ft_putbyte(&(size), &printed_bytes, *str);
+	while (sp.precision-- > size)
+		ft_putbyte(&(sp.width), &printed_bytes, '0');
 	while (size--)
 		str += ft_putbyte(&(sp.width), &printed_bytes, *str);
 	return (printed_bytes);
@@ -90,9 +92,9 @@ int	ft_print_number(t_spec sp, long number, int base, uint8_t uppercase)
 			ft_putbyte(&(sp.width), &printed_bytes, ' ');
 	else if (sp.flag == '-')
 		printed_bytes = ft_print_left(str, sp, size);
-	else if (sp.flag == '0' && sp.precision <= 0)
+	else if (sp.flag == '0' && sp.precision < 0)
 		printed_bytes = ft_print_right_no_prescision(str, sp, size);
-	else if (sp.precision > size)
+	else if (sp.precision >= size)
 		printed_bytes = ft_print_right_with_prescision(str, sp, size);
 	else
 		printed_bytes = ft_print_right_size(str, sp, size);

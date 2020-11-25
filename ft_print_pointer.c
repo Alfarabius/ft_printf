@@ -6,7 +6,7 @@
 /*   By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 14:10:16 by mrosie            #+#    #+#             */
-/*   Updated: 2020/11/24 18:46:43 by mrosie           ###   ########.fr       */
+/*   Updated: 2020/11/25 13:09:40 by mrosie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ int			ft_print_pointer(t_spec sp, unsigned long toptr)
 	tmp = str;
 	size = ft_strlen(str);
 	if (sp.flag == '-')
-		ft_print_left(sp, str, size);
+		printed_bytes += ft_print_left(sp, str, size);
 	else
-		ft_print_right(sp, str, size);
+		printed_bytes += ft_print_right(sp, str, size);
 	free(tmp);
 	return (printed_bytes);
 }

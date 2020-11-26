@@ -6,7 +6,7 @@
 /*   By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 15:35:17 by mrosie            #+#    #+#             */
-/*   Updated: 2020/11/24 18:12:36 by mrosie           ###   ########.fr       */
+/*   Updated: 2020/11/26 13:42:37 by mrosie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static	int		ft_parse_format(const char *str, va_list ar)
 {
 	t_spec	spec;
 	int		printed_bytes;
+	int		acc;
 
 	printed_bytes = 0;
 	while (*str != '\0')
@@ -40,8 +41,9 @@ static	int		ft_parse_format(const char *str, va_list ar)
 		if (*str == '%' && *(str + 1) != '%')
 		{
 			ft_struct_init(&spec);
-			if ((printed_bytes += ft_parser(++str, &spec, ar)) == -1)
+			if ((acc = ft_parser(++str, &spec, ar)) == -1)
 				return (-1);
+			printed_bytes += acc;
 			str += spec.offset + 1;
 		}
 		else if (*str && *(str + 1) == '%')

@@ -6,7 +6,7 @@
 /*   By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 15:45:18 by mrosie            #+#    #+#             */
-/*   Updated: 2020/11/25 16:08:57 by mrosie           ###   ########.fr       */
+/*   Updated: 2020/11/26 12:40:43 by mrosie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ int				ft_print_pointer(t_spec sp, unsigned long toptr);
 int				ft_print_string(t_spec sp, char *string);
 int				ft_putbyte(int *mod, int *printed_bytes, char sym);
 char			*ft_itoa_base(long n, int base, uint8_t uppercase);
-char			*ft_ulitoa_base(unsigned long n, int base, uint8_t uppercase);
 
 #endif

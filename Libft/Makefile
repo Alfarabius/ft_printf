@@ -6,7 +6,7 @@
 #    By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/04 12:55:51 by mrosie            #+#    #+#              #
-#    Updated: 2020/11/24 15:12:54 by mrosie           ###   ########.fr        #
+#    Updated: 2020/11/27 19:01:22 by mrosie           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,10 +75,10 @@ all:	$(NAME)
 	@ $(CC) $(CFLAG) -c $< -o $(<:.c=.o)
 
 $(NAME):	$(OBJS) $(HEAD)
-	@ ar rc $(NAME) $(OBJS)
+	@ ar rcs $(NAME) $(OBJS)
 
 bonus:	$(BONUS_OBJS) $(OBJS) $(HEAD)
-	@ ar rc $(NAME) $(BONUS_OBJS) $(OBJS)
+	@ ar rcs $(NAME) $(BONUS_OBJS) $(OBJS)
 
 clean:
 	@ $(RM) $(OBJS) $(BONUS_OBJS)

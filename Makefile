@@ -6,7 +6,7 @@
 #    By: mrosie <mrosie@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/21 13:26:38 by mrosie            #+#    #+#              #
-#    Updated: 2020/11/25 16:09:44 by mrosie           ###   ########.fr        #
+#    Updated: 2020/11/27 19:03:31 by mrosie           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,7 @@ SRCS	= ft_printf.c \
 			ft_print_string.c \
 			ft_print_number.c \
 			ft_print_pointer.c \
-			ft_itoa_base.c \
-			ft_ulitoa_base.c \
-			
+			ft_itoa_base.c 
 HEAD	= ft_printf.h
 
 OBJS	= $(SRCS:.c=.o)
@@ -40,7 +38,7 @@ all:	$(NAME)
 $(NAME):	$(OBJS) $(HEAD)
 	@ $(MAKE) -C ./Libft
 	@ cp ./Libft/libft.a $(NAME)
-	@ ar rc $(NAME) $(OBJS)
+	@ ar rcs $(NAME) $(OBJS)
 
 clean:
 	@ $(MAKE) clean -C ./Libft
